@@ -421,6 +421,8 @@ display: none;
   word-break: normal;
 }
 
+ 
+
 @media screen and (max-width: 1700px) and (min-width:1201px)
 {
   .chart
@@ -445,7 +447,7 @@ display: none;
  
   .chart
   {
-    margin-left:30px;
+    margin-left:80px;
     margin-top:150px;
   }
   .column {
@@ -465,7 +467,7 @@ display: none;
 
 @media screen and (max-width: 600px) {
   .column {
-    width: 60%;
+    width: 80%;
     margin-top: 10px;
   }
 
