@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base href="/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,500,600,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    <script type="text/javascript">
+        // Load google charts
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawAgeDistributionChart);
+        google.charts.setOnLoadCallback(drawMovieDistributionChart);
+
+        // Draw the chart and set the chart values
+        function drawAgeDistributionChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Age', 'Number of People'],
+                ['under 7', 4260],
+                ['7-14', 3970],
+                ['14-18', 3454],
+                ['18+', 2390],
+            ]);
+
+            // Optional; add a title and set the width and height of the chart
+            var options = {
+                'title': 'Age Distribution', titleTextStyle: {fontSize: 15, fontName: 'Source Sans Pro', regular: true},
+                pieHole: 0.58, 'width': 400, 'height': 250,
+                colors: ['#55D9FD', '#FE8575', '#FFD983', '#A49DFF'], backgroundColor: '#FEFCFF',
+                legend: {
+                    position: 'right',
+                    alignment: 'center',
+                    textStyle: {fontSize: 11, fontName: 'Source Sans Pro', regular: true}
+                }, pieSliceText: 'none'
+            };
+            // Display the chart inside the <div> element with id="piechart"
+            var chart = new google.visualization.PieChart(document.getElementById('Age_chart_div'));
+            chart.draw(data, options);
+        }
+
+        // Draw the chart and set the chart values
+        function drawMovieDistributionChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Gender', 'Number of Movies'],
+                ['Action', 4260],
+                ['Comedy', 3970],
+                ['Drama', 3454],
+                ['Animation', 2390],
+            ]);
+
+            // Optional; add a title and set the width and height of the chart
+            var options = {
+                'title': 'Movie Distribution',
+                titleTextStyle: {fontSize: 15, fontName: 'Source Sans Pro', regular: true},
+                pieHole: 0.58,
+                'width': 400,
+                'height': 250,
+                colors: ['#55D9FD', '#FE8575', '#FFD983', '#A49DFF'],
+                backgroundColor: '#FEFCFF',
+                legend: {
+                    position: 'right',
+                    alignment: 'center',
+                    textStyle: {fontSize: 11, fontName: 'Source Sans Pro', regular: true}
+                },
+                pieSliceText: 'none'
+            };
+
+            // Display the chart inside the <div> element with id="piechart"
+            var chart = new google.visualization.PieChart(document.getElementById('Movie_chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+    <title>MyCinema | Statistics</title>
+</head>
+<body>
+<app-root>
+        <div class="layout">
+                <div class="l-left">
+                    <a href="#" class="toggle-menu topm1"><i class="material-icons">menu</i></a>
+                    <a href="Home.html" class="logo-menu">My Cinema</a>
+                    <div class="menu">
+                        <a href="Home.html" class="menu-item active">
+                            <img src="assets/assets/icons/icon_home-1.svg" alt="" class="ico">
+                            Home
+                        </a>
+                        <a href="Statistics.html" class="menu-item">
+                            <img src="assets/icons/icon_dashboard-1.svg" alt="" class="ico">
+                            Statistics
+                        </a>
+                        <a href="Movies.html" class="menu-item">
+                            <img src="assets/icons/icon_products-1.svg" alt="" class="ico">
+                            Movies
+                        </a>
+                        <a href="Cinema-rooms.html" class="menu-item">
+                            <img src="assets/icons/icon_Invoices-1.svg" alt="" class="ico">
+                            Cinema Rooms
+                        </a>
+                        <a href="Program.html" class="menu-item">
+                            <img src="assets/icons/icon_calendar-1.svg" alt="" class="ico">
+                            Program
+                        </a>
+                        <a href="Settings.html" class="menu-item">
+                            <img src="assets/icons/icon_setting.svg" alt="" class="ico">
+                            Settings
+                        </a>
+                    </div>
+                </div>
+            </div>
+</app-root>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>
