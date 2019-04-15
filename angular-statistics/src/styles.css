@@ -16,21 +16,25 @@
     margin: 0;
     padding: 0;
   }
+
   body {
     font-family: 'Source Sans Pro', sans-serif;
   }
+
   .layout {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
     min-height: 100vh;
   }
+
   .layout .l-left {
     flex-basis: 220px;
     background: var(--color-prim);
     color: #333;
     position: relative;
   }
+
   .layout .l-right {
     flex: 1;
     background: var(--color-bg1);
@@ -43,6 +47,7 @@
   .layout .toggle-menu {
     display: none;
   }
+
   .l-left .toggle-menu.topm1 {
     display: none;
     position: absolute;
@@ -51,6 +56,7 @@
     color: white;
     z-index: 5;
   }
+
   .l-right .toggle-menu.topm2 {
     display: none;
     color: #aaa;

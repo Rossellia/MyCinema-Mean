@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Statistics';
+  /*lat: number = 43.653908;
+  lng: number = -79.384293; */
 }
