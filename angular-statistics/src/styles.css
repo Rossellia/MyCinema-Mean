@@ -424,7 +424,7 @@
     word-break: normal;
   }
   
-  .piecharts {
+  .divTable {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -433,9 +433,11 @@
     margin-top: 20px;
     padding-left: 50px;
     padding-right: 50px;
+    height: 30%;
+    width: auto;
   }
 
-  .piechart{
+  .divTableCell{
     margin-left: 30px;
     margin-right: 20px;
     padding-right: 5px;
