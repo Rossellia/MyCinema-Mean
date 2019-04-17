@@ -1,3 +1,4 @@
+
 .toggle-menu {
     display: none;
   }
@@ -43,7 +44,7 @@
     margin-top: 2px;
   }
 
-  .menu .menu-item:hover,
+ .menu .menu-item:hover,
  .menu .menu-item.active {
   background: var(--darken-1);
   border-left-color: var(--color-sec);
