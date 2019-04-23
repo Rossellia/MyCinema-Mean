@@ -7,3 +7,11 @@ export class PieChartConfig {
         this.pieHole = pieHole;
     }
 }
+
+export class BarChartConfig {
+    title: string;
+
+    constructor(title: string) {
+        this.title = title;
+    }
+}

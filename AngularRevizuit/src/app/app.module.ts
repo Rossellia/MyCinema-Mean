@@ -16,8 +16,8 @@ import { ScriptsComponent } from './scripts/scripts.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { APP_BASE_HREF } from '@angular/common';
-
-
+import { PieChartComponent } from './piecharts/piecharts.component';
+import { DisplayPiechartsComponent } from './display-piecharts/display-piecharts.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import { APP_BASE_HREF } from '@angular/common';
     SettingsComponent,
     StatisticsComponent,
     ScriptsComponent,
-
+    PieChartComponent,
+    DisplayPiechartsComponent
   ],
   imports: [
     BrowserModule,

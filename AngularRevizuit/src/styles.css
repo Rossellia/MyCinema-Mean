@@ -3,4 +3,4 @@
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('assets/stylesheets/style.css');
-
+@import url('app/display-piecharts/display-piecharts.component.css');

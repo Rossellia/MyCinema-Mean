@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./statistics.component.css', '../assets/stylesheets/Statistics/style.css']
 })
 export class StatisticsComponent implements OnInit {
+ // @Input() dbForm : PieChartComponent;
 
   constructor() { }
 

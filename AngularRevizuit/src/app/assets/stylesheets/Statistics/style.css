@@ -421,8 +421,6 @@ display: none;
   word-break: normal;
 }
 
- 
-
 @media screen and (max-width: 1700px) and (min-width:1201px)
 {
   .chart
