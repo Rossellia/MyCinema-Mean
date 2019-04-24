@@ -5,7 +5,7 @@
       <div class="card-body">
           <h3 class="title">MyCinema</h3>
           <div class="big-container">
-              <div class="cinema-slide-show">
+              <!----<div class="cinema-slide-show">
                   <div class="slide">
                       <div id="first-slide">
                           <img src="../assets/images/cinema-room-1-1.jpg" class="slide-image">
@@ -33,7 +33,10 @@
                       <span class="dot" onclick="currentSlide(3)"></span>
                       <span class="dot" onclick="currentSlide(4)"></span>
                   </div>
-              </div>
+              </div>-->
+                  <slideshow [imageUrls]="images" [minHeight]="'300px'"></slideshow>
+
+                
               <div id="cinema-articles">
                   <div id="article1">
                       <h4 class=title-article>IMAX</h4>

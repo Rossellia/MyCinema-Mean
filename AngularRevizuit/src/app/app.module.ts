@@ -14,11 +14,13 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ScriptsComponent } from './scripts/scripts.component';
 import { RouterModule, Routes } from '@angular/router';
+import {SlideshowModule} from 'ng-simple-slideshow';
 import { RouterTestingModule } from '@angular/router/testing';
 import { APP_BASE_HREF } from '@angular/common';
 import { PieChartComponent } from './piecharts/piecharts.component';
 import { DisplayPiechartsComponent } from './display-piecharts/display-piecharts.component';
-
+import { CarouselBasicComponent } from './carousel-basic/carousel-basic.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,10 +35,12 @@ import { DisplayPiechartsComponent } from './display-piecharts/display-piecharts
     StatisticsComponent,
     ScriptsComponent,
     PieChartComponent,
-    DisplayPiechartsComponent
+    DisplayPiechartsComponent,
+    CarouselBasicComponent
   ],
-  imports: [
+  imports: [ NgbModule.forRoot(),
     BrowserModule,
+    SlideshowModule,
     RouterModule.forRoot([
       {
         path: 'home', component: HomeComponent
