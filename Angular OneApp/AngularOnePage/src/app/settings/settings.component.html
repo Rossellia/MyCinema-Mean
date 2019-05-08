@@ -23,7 +23,7 @@
 
                   </div>
                   <div class="name">
-                      <h3>John Doe</h3>
+                      <h3>{{firstName + ' ' + lastName}}</h3>
                       <p>User type</p>
                   </div>
                   <div class="editPenName">
@@ -33,22 +33,27 @@
               <div class="details-part">
                   <div class="details">
                       <h5>First Name</h5>
-                      <p>John</p>
+                      <p>{{firstName}}</p>
                   </div>
 
                   <div class="details">
                       <h5>Last Name</h5>
-                      <p>Doe</p>
+                      <p> {{lastName}}</p>
+                  </div>
+                  
+                  <div class="details">
+                      <h5>Email Address</h5>
+                      <p>{{email}}</p>
                   </div>
 
                   <div class="details">
-                      <h5>Profile Data</h5>
-                      <p>Regular 18pt</p>
-                  </div>
+                        <h5>Phone Number</h5>
+                        <p>{{phoneNumber}}</p>
+                 </div>
 
                   <div class="details">
-                      <h5>Profile Data</h5>
-                      <p>Regular 18pt</p>
+                      <h5>Birthday</h5>
+                      <p> {{birthday}}</p>
                   </div>
 
               </div>
@@ -58,43 +63,44 @@
               <form class="settingsForm" action="">
                   <div class="field">
                       <input type="text" class="formField" name="FName"
-                             placeholder="Enter your first name" onsubmit="return checkforblank()" required>
+                             placeholder={{firstName}} onsubmit="return checkforblank()" required
+                             [(ngModel)]="enteredFirstName">
                       <label name="settings">First Name</label>
                   </div>
 
                   <div class="field">
-                      <input type="text" class="formField" name="LName" placeholder="Enter your last name"
-                             required>
+                      <input type="text" class="formField" name="LName" placeholder={{lastName}}
+                             required [(ngModel)]="enteredLastName">
                       <label name="settings">Last Name</label>
                   </div>
 
                   <div class="field">
                       <input type="email" class="formField" name="email"
-                             placeholder="Enter your email address" required>
+                             placeholder={{email}} required [(ngModel)]="enteredEmail">
                       <label name="settings">Email Address</label>
                   </div>
 
                   <div class="field">
                       <input type="text" class="formField" name="phone"
-                             placeholder="Enter your phone number" required>
+                             placeholder={{phoneNumber}} required [(ngModel)]="enteredPhoneNumber">
                       <label name="settings">Phone Number</label>
                   </div>
 
                   <div class="field">
-                      <input type="text" class="formField" name="settings" placeholder="Placeholder"
-                             required>
-                      <label name="settings">Label</label>
+                      <input type="text" class="formField" name="settings" placeholder={{birthday}}
+                             required  [(ngModel)]="enteredBirthday">
+                      <label name="settings">Birthday</label>
                   </div>
 
-                  <div class="field">
+                <!---<div class="field">
                       <input type="text" class="formField" name="settings" placeholder="Placeholder"
                              required>
                       <label name="settings">Label</label>
-                  </div>
+                  </div>-->
               </form>
               <div class="form-buttons-container">
-                  <button class="discardBtn" type="button">Discard</button>
-                  <button class="saveBtn" type="submit" disabled>Save</button>
+                  <button class="discardBtn" type="button" (click)="onDiscard()">Discard</button>
+                  <button class="saveBtn" type="submit" (click)="onSave()">Save</button>
               </div>
           </div>
       </div>

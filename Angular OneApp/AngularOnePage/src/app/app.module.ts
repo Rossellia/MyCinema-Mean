@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomebarComponent } from './homebar/homebar.component';
@@ -25,9 +26,6 @@ import { DisplayPiechartsComponent } from './display-piecharts/display-piecharts
 import { PieChartComponent } from './piecharts/piecharts.component';
 import {SlideshowModule} from 'ng-simple-slideshow';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +50,7 @@ import {SlideshowModule} from 'ng-simple-slideshow';
   imports: [
     BrowserModule,
     SlideshowModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path: 'main', component: MainComponent
@@ -96,5 +95,3 @@ import {SlideshowModule} from 'ng-simple-slideshow';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
