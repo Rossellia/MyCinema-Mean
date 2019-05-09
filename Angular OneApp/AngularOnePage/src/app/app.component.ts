@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import movies from '../assets/movies.json'; 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
