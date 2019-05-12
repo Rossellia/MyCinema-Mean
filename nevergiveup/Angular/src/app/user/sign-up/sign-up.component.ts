@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+
 import { UserService } from '../../shared/user.service';
 
 @Component({
@@ -35,9 +36,12 @@ export class SignUpComponent implements OnInit {
   }
   resetForm(form: NgForm) {
     this.userService.selectedUser = {
-      fullName: '',
+      firstName: '',
+      lastName: '',
+      username: '',
       email: '',
-      password: ''
+      password: '',
+      confirmPassword: ''
     };
     form.resetForm();
     this.serverErrorMessages = '';
