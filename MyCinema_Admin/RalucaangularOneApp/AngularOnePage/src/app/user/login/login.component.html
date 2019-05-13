@@ -1,0 +1,42 @@
+<div class="image-container" style="float:left"></div>
+
+<div style="float:right; width:60%">
+<div class="flex-white-container"></div>
+<div class="white-contanier" style="margin-left:30%;">
+
+
+    <div class="title-container"> My Cinema</div>
+    <div class="subtitle-container">Welcome back! Please login to your account.</div>
+    <div class="login-container">
+
+        <form>
+
+            <input type="text" id="username" placeholder="Username">
+            <input type="text" id="password" placeholder="Password">
+
+            <div class="checkbox-forgpass-container">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="RememberMe">
+                    <label for="RememberMe"> Remember Me</label>
+
+                </div>
+
+                <div class="forgot-password-container" [routerLink]="['/forgot']" routerLinkActive="router-link-active" > Forgot Password
+                </div>
+
+
+            </div>
+
+            <div class="button-container">
+
+                <div class="button" [routerLink]="['/main']" routerLinkActive="router-link-active" >Login</div>
+                <div class="button" [routerLink]="['/register']" routerLinkActive="router-link-active" >Sign Up</div>
+            </div>
+
+        </form>
+    </div>
+
+
+</div>
+<div class="flex-white-container"></div>
+</div>
