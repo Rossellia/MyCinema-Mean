@@ -1,0 +1,69 @@
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+<div class="layout">
+
+  <div class="l-left">
+   <app-adminhomebar></app-adminhomebar>
+  </div>
+
+  <div class="l-right">
+  <app-adminsearchbar></app-adminsearchbar>
+<div class="main">
+<h3 class="title">Add room</h3>
+<div class="card">
+      <div class="card-body">
+          <div class="big-container">
+            <form #employeeForm="ngForm" (ngSubmit)="onSubmit(addroomForm)">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="addroomService.selectedAddroom._id">
+              <div class="row">
+                <div class="input-field col s12">
+				<label>Room name <label class="red-text">*</label>:
+                  </label><br>
+                  <input type="text" name="name" #name="ngModel" [(ngModel)]="addroomService.selectedAddroom.name" placeholder="room name" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+				  <label>Seats <label class="red-text">*</label>:</label><br>
+                  <input type="text" name="seats" #name="ngModel" [(ngModel)]="addroomService.selectedAddroom.seats" placeholder="number of seats">
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+
+                  <button class="btn btn-custom right" type="button" (click)="resetForm(addroomForm)">Reset</button>
+                  <button class="btn btn-custom right" type="submit">Submit</button>
+                </div>
+              </div>
+            </form>
+          <div class="col s7">
+              <table class="responsive-table highlight">
+                  <thead>
+                    <tr>
+                      <th>Room</th>
+                      <th>Seats</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let emp of addroomService.addrooms">
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.seats}}</td>
+                    <td>
+                        <a class="action-btn" (click)="onEdit(emp)">
+                          <i class="material-icons">edit</i>
+                        </a>
+                        <a class="action-btn" (click)="onDelete(emp._id,addroomForm)">
+                          <i class="material-icons">delete</i>
+                        </a>
+                      </td>
+                  </tr>
+                </table>
+          </div>
+		  </div>
+	 </div>
+  </div>
+  </div>
+  </div>
+</div>
