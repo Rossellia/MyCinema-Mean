@@ -15,7 +15,7 @@
 <div class="card">
       <div class="card-body">
           <div class="big-container">
-            <form #employeeForm="ngForm" (ngSubmit)="onSubmit(addroomForm)">
+            <form #addroomForm="ngForm" (ngSubmit)="onSubmit(addroomForm)">
               <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="addroomService.selectedAddroom._id">
               <div class="row">
                 <div class="input-field col s12">
