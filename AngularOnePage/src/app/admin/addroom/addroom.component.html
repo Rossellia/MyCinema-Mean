@@ -34,7 +34,7 @@
                 <div class="input-field col s12">
 
                   <button class="btn btn-custom right" type="button" (click)="resetForm(addroomForm)">Reset</button>
-                  <button class="btn btn-custom right" type="submit">Submit</button>
+                  <button class="btn btn-custom right" type="submit" [disabled]="!addroomForm.valid" (click)="onSubmit(addroomForm)" value="Add Room">Submit</button>
                 </div>
               </div>
             </form>
