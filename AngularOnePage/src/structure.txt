@@ -1,0 +1,66 @@
+● src
++---● app
+|   +--● user
+|   |  |--user.component.ts|.html|.css
+|   |  +--● forgot
+|   |  |  |--forgot.component.ts|.html|.css
+|   |  +--● login
+|   |  |  |--login.component.ts|.html|.css
+|   |  +--● register
+|   |  |  |--register.component.ts|.html|.css
+|   +--● cinemarooms
+|   |  |--cinemarooms.component.ts|.html|.css
+|   +--● display-piecharts
+|   |  |--display-piecharts.component.ts|.html|.css
+|   +--● home
+|   |  |--home.component.ts|.html|.css
+|   +--● homebar
+|   |  |--homebar.component.ts|.html|.css
+|   +--● main
+|   |  |--main.component.ts|.html|.css
+|   +--● movies
+|   |  |--movies.component.ts|.html|.css
+|   +--● piecharts
+|   |  |--piecharts.component.ts|.html|.css
+|   +--● program
+|   |  |--program.component.ts|.html|.css
+|   +--● room
+|   |  |--room.component.ts|.html|.css
+|   +--● scripts
+|   |  |--scripts.component.ts|.html|.css
+|   +--● searchbar
+|   |  |--searchbar.component.ts|.html|.css
+|   +--● settings
+|   |  |--settings.component.ts|.html|.css
+|   +--● statistics
+|   |  |--statistics.component.ts|.html|.css
+|   +--● admin
+|   |  |--admin.component.ts|.html|.css
+|   |  +--● addmovie
+|   |  |  |--addmovie.component.ts|.html|.css
+|   |  +--● addprogram
+|   |  |  |--addprogram.component.ts|.html|.css
+|   |  +--● addroom
+|   |  |  |--addroom.component.ts|.html|.css
+|   |  +--● adminhomebar
+|   |  |  |--adminhomebar.component.ts|.html|.css
+|   |  +--● adminmain
+|   |  |  |--adminmain.component.ts|.html|.css
+|   |  +--● adminsearchbar
+|   |  |  |--adminsearchbar.component.ts|.html|.css
+|   |  +--● loginadmin
+|   |  |  |--loginadmin.component.ts|.html|.css
+|   |  +--● modifyuser
+|   |  |  |--modifyuser.component.ts|.html|.css
+|   |
+|   |--● shared
+|   |  |--user.service.ts
+|   |  |--user.model.ts
+|   |
+|   |--app.module.ts
+|   |--routes.ts
+|
++---● auth
+    |
+    +-- auth.gaurd.ts
+    +-- auth.interceptor.ts
