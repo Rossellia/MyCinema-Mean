@@ -1,0 +1,50 @@
+<div class="image-container" style="width:40%;float:left;"></div>
+<div style="width:60%;float:right;">
+<div class="flex-white-container"></div>
+<div class="white-contanier " style="margin-left:30%;">
+
+
+    <div class="title-container"> My Cinema</div>
+    <div class="subtitle-container">Please complete to create your account.</div>
+    <div class="signup-container">
+
+        <form>
+
+            <div class="firstname-lastname-container">
+                <div class="firstname"><input type="text" id="firstname" placeholder="First Name"></div>
+                <div class="lastname"><input type="text" id="lastname" placeholder="Last Name"></div>
+
+            </div>
+
+            <input type="text" id="username" placeholder="Username">
+            <input type="text" id="email" placeholder="E-mail">
+            <input type="text" id="password" placeholder="Password">
+            <input type="text" id="confirmpassword" placeholder="Confirm Password">
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="Terms">
+                <label for="Terms">I agree with terms and conditions</label>
+
+            </div>
+
+            <div class="button-container">
+
+
+                <div class="button" [routerLink]="['/login']" routerLinkActive="router-link-active" >Sign Up</div>
+            </div>
+
+
+            <div class="button-container">
+
+                <div class="return-signin" [routerLink]="['/login']" routerLinkActive="router-link-active" > Already have an account? Sign In.</div>
+
+
+            </div>
+
+        </form>
+    </div>
+
+
+</div>
+<div class="flex-white-container"></div>
+</div>
