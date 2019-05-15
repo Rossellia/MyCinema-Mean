@@ -1,0 +1,119 @@
+<div class="layout">
+
+  <div class="l-left">
+   <app-homebar></app-homebar>
+  </div>
+
+  <div class="l-right">
+  <app-searchbar></app-searchbar>
+<div class="container">
+
+  <div class="settingsContainer">
+      <h1 class="Title">Settings</h1>
+      <div class="settings">
+          <div class="settingsLeftSide">
+
+              <div class="image-details">
+                  <div class="image-part">
+                      <img src="assets/images/john-doe.png" alt="" class="profile">
+                      <div class="bgPen"><img src="assets/icons/icon_edit.svg" alt="" class="editProfile">
+                      </div>
+                  </div>
+                  <div class="nameContainerProfile">
+
+                  </div>
+                  <div class="name">
+                      <h3>{{firstName + ' ' + lastName}}</h3>
+                      <p>User type</p>
+                  </div>
+                  <div class="editPenName">
+                      <img src="assets/icons/icon_edit.svg" alt="" class="editName">
+                  </div>
+              </div>
+              <div class="details-part">
+                  <div class="details">
+                      <h5>First Name</h5>
+                      <p>{{firstName}}</p>
+                  </div>
+
+                  <div class="details">
+                      <h5>Last Name</h5>
+                      <p> {{lastName}}</p>
+                  </div>
+                  
+                  <div class="details">
+                      <h5>Email Address</h5>
+                      <p>{{email}}</p>
+                  </div>
+
+                  <div class="details">
+                        <h5>Phone Number</h5>
+                        <p>{{phoneNumber}}</p>
+                 </div>
+
+                  <div class="details">
+                      <h5>Birthday</h5>
+                      <p> {{birthday}}</p>
+                  </div>
+
+              </div>
+
+          </div>
+          <div class="settingsRightSide">
+              <form class="settingsForm" action="">
+                  <div class="field">
+                      <input type="text" class="formField" name="FName"
+                             placeholder={{firstName}} onsubmit="return checkforblank()" required
+                             [(ngModel)]="enteredFirstName">
+                      <label name="settings">First Name</label>
+                  </div>
+
+                  <div class="field">
+                      <input type="text" class="formField" name="LName" placeholder={{lastName}}
+                             required [(ngModel)]="enteredLastName">
+                      <label name="settings">Last Name</label>
+                  </div>
+
+                  <div class="field">
+                      <input type="email" class="formField" name="email"
+                             placeholder={{email}} required [(ngModel)]="enteredEmail">
+                      <label name="settings">Email Address</label>
+                  </div>
+
+                  <div class="field">
+                      <input type="text" class="formField" name="phone"
+                             placeholder={{phoneNumber}} required [(ngModel)]="enteredPhoneNumber">
+                      <label name="settings">Phone Number</label>
+                  </div>
+
+                  <div class="field">
+                      <input type="text" class="formField" name="settings" placeholder={{birthday}}
+                             required  [(ngModel)]="enteredBirthday">
+                      <label name="settings">Birthday</label>
+                  </div>
+
+                <!---<div class="field">
+                      <input type="text" class="formField" name="settings" placeholder="Placeholder"
+                             required>
+                      <label name="settings">Label</label>
+                  </div>-->
+              </form>
+              <div class="form-buttons-container">
+                  <button class="discardBtn" type="button" (click)="onDiscard()">Discard</button>
+                  <button class="saveBtn" type="submit" (click)="onSave()">Save</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="assets/scripts/scriptSettings.js"></script>
