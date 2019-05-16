@@ -19,20 +19,20 @@ module.exports.getUser = (req, res) => {
 
         userProfile.findById(req.params.id, (err, doc) => {
         if (!err) { res.send(doc); }
-        else { console.log('Error in Retriving Employee :' + JSON.stringify(err, undefined, 2)); }
+        else { console.log('Error in Retriving UserProfile :' + JSON.stringify(err, undefined, 2)); }
     });
 };
 
-module.exports.addUser = (req, res, next) => {
-    var usrProfile = new userProfile({
-        username: req.body.username,
-        profilePicture: req.body.profilePicture,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        phoneNumber: req.body.phoneNumber,
-        birthday: req.body.birthday
-    });
+module.exports.addUser = (req, res) => {
+    var usrProfile = new userProfile();
+    usrProfile.username = req.body.username;
+    usrProfile.profilePicture = req.body.profilePicture;
+    usrProfile.firstName = req.body.firstName;
+    usrProfile.lastName = req.body.lastName;
+    usrProfile.email = req.body.email;
+    usrProfile.phoneNumber = req.body.phoneNumber;
+    usrProfile.birthday=  req.body.birthday;
+    
 
     usrProfile.save((err, doc) => {
         if (!err) { res.send(doc); }
@@ -40,7 +40,7 @@ module.exports.addUser = (req, res, next) => {
     });
 };
 
-module.exports.updateUser = (req, res, next) => {
+module.exports.updateUser = (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
 
@@ -54,17 +54,17 @@ module.exports.updateUser = (req, res, next) => {
         birthday: req.body.birthday
     };
 
-    UserProfile.findByIdAndUpdate(req.params.id, { $set: emp }, { new: true }, (err, doc) => {
+    userProfile.findByIdAndUpdate(req.params.id, { $set: usrProfile }, { new: true }, (err, doc) => {
         if (!err) { res.send(doc); }
         else { console.log('Error in UserProfile Update :' + JSON.stringify(err, undefined, 2)); }
     });
 };
 
-module.exports.deleteUser = (res, req, next) => {
+module.exports.deleteUser = (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
 
-    UserProfile.findByIdAndRemove(req.params.id, (err, doc) => {
+    userProfile.findByIdAndRemove(req.params.id, (err, doc) => {
         if (!err) { res.send(doc); }
         else { console.log('Error in Employee Delete :' + JSON.stringify(err, undefined, 2)); }
     });

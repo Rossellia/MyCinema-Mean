@@ -2,7 +2,6 @@ require('./config/config');
 require('./models/db');
 require('./config/passportConfig');
 
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -14,7 +13,7 @@ var app = express();
 
 // middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({origin : 'http://localhost:4200'}));
 app.use(passport.initialize());
 app.use('/api', rtsIndex);
 

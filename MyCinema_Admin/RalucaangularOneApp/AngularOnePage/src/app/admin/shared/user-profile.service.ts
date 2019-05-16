@@ -6,14 +6,26 @@ import { map } from 'rxjs/operators';
 
 import { UserProfile } from './user-profile.model';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class UserProfileService {
   selectUserProfile: UserProfile;
+  /*= {
+    _id: "",
+    username: "",
+    profilePicture: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    birthday: ""
+  };*/
   userProfiles: UserProfile[];
   readonly baseURL = 'http://localhost:3335/api/modifyuser';
  
   constructor(private http: HttpClient) { }
-
+ 
   postUserProfile(usr: UserProfile) {
     return this.http.post(this.baseURL, usr);
   }
@@ -23,10 +35,10 @@ export class UserProfileService {
   }
 
   putUserProfile(usr: UserProfile){
-    return this.http.put(this.baseURL + `/?id=${usr._id}`, usr);
+    return this.http.put(this.baseURL + `/${usr._id}`, usr);
   }
 
-  deleteEmployee(_id: string) {
-    return this.http.delete(this.baseURL + `/?id=${_id}`);
+  deleteUserProfile(_id: string) {
+    return this.http.delete(this.baseURL + `/${_id}`);
   }
 }

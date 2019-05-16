@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { HomebarComponent } from './homebar/homebar.component';
@@ -25,7 +26,6 @@ import { DisplayPiechartsComponent } from './display-piecharts/display-piecharts
 import { PieChartComponent } from './piecharts/piecharts.component';
 import {SlideshowModule} from 'ng-simple-slideshow';
 import { UserComponent } from './user/user.component';
-import { FormsModule } from '@angular/forms';
 import {NgForm} from '@angular/forms';
 import {NgModel} from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -43,6 +43,8 @@ import { UserService } from './shared/user.service';
 
 import { AuthGuard } from './authAdmin/auth.guard';
 import { AuthInterceptor } from './authAdmin/auth.interceptor';
+import { UserProfileFormComponent } from './admin/user-profile-form/user-profile-form.component';
+import { UserProfileDisplayComponent } from './admin/user-profile-display/user-profile-display.component';
 
 
 
@@ -80,7 +82,9 @@ import { AuthInterceptor } from './authAdmin/auth.interceptor';
     ModifyuserComponent,
     AddprogramComponent,
     AdminmainComponent,
-    AdminComponent
+    AdminComponent,
+    UserProfileFormComponent,
+    UserProfileDisplayComponent
 
   ],
   imports: [

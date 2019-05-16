@@ -1,14 +1,104 @@
 <div class="layout">
 
-  <div class="l-left">
-   <app-adminhomebar></app-adminhomebar>
-  </div>
+    <div class="l-left">
+        <app-adminhomebar></app-adminhomebar>
+    </div>
 
-  <div class="l-right">
-  <app-adminsearchbar></app-adminsearchbar>
-<div class="body-main">
-  <p id="movies-title">Modify User</p>
-  --aici scrieti voi--
-  </div>
-  </div>
+    <div class="l-right">
+        <app-adminsearchbar></app-adminsearchbar>
+        <div class="row">
+            <div class="column">
+                <div class="details-part">
+                    <form #userProfileForm="ngForm" (ngSubmit)="onSubmit(userProfileForm)">
+                        <input type="hidden" name="_id" #_id="ngModel"
+                            [(ngModel)]="userProfileService.selectUserProfile._id">
+                        <div class="details">
+                            <h5>User Name</h5>
+                            <input type="text" name="username" #username="ngModel"
+                                [(ngModel)]="userProfileService.selectUserProfile.username"
+                                placeholder="Change the user name">
+                        </div>
+
+                        <div class="details">
+                            <h5>Profile picture:</h5>
+                            <input type="text" name="profilePicture" #name="ngModel"
+                                [(ngModel)]="userProfileService.selectUserProfile.profilePicture"
+                                placeholder="Eg : default.png">
+                        </div>
+
+                        <div class="details">
+                            <h5>First Name:</h5>
+                            <input type="text" name="firstName" #name="ngModel"
+                                [(ngModel)]="userProfileService.selectUserProfile.firstName"
+                                placeholder="Enter first name">
+                        </div>
+
+                        <div class="details">
+                            <h5>Last Name:</h5>
+                            <input type="text" name="lastName" #name="ngModel"
+                                [(ngModel)]="userProfileService.selectUserProfile.lastName"
+                                placeholder="Enter last name">
+                        </div>
+
+                        <div class="details">
+                            <h5>E-mail:</h5>
+                            <input type="text" name="email" #name="ngModel"
+                                [(ngModel)]="userProfileService.selectUserProfile.email" placeholder="Enter e-mail">
+                        </div>
+                        <div class="details">
+                            <h5>Phone Number:</h5>
+                            <input type="text" name="phoneNumber" #name="ngModel"
+                                [(ngModel)]="userProfileService.selectUserProfile.phoneNumber"
+                                placeholder="Enter phone number">
+                        </div>
+                        <div class="details">
+                            <h5>Birthday:</h5>
+                            <input type="text" name="birthday" #name="ngModel"
+                                [(ngModel)]="userProfileService.selectUserProfile.birthday"
+                                placeholder="Enter last name">
+                        </div>
+                        <div class="details">
+                            <button class="button" type="button" (click)="resetForm(userProfileForm)">Reset</button>
+                            <button class="button" type="submit" [disabled]="!userProfileForm.valid">Submit</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="column">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username </th>
+                            <th>Profile Picture</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>E-mail</th>
+                            <th>Phone Number</th>
+                            <th>Birthday</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tr *ngFor="let usr of userProfileService.userProfiles">
+                        <td>{{usr.username}}</td>
+                        <td>{{usr.profilePicture}}</td>
+                        <td>{{usr.firstName}}</td>
+                        <td>{{usr.lastName}}</td>
+
+                        <td>
+                            <a class="action-btn" (click)="onEdit(usr)">
+                                <i class="material-icons">edit</i>
+                            </a>
+                            <a class="action-btn"  (click)="onDelete(usr._id,userProfileForm)">
+                                <i class="material-icons">delete</i>
+                            </a>
+                        </td>
+                        <td>{{usr.email}}</td>
+                        <td>{{usr.phoneNumber}}</td>
+                        <td>{{usr.birthday}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
