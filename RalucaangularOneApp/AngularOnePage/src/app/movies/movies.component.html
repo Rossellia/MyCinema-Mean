@@ -1,0 +1,33 @@
+<div class="layout">
+
+    <div class="l-left">
+     <app-homebar></app-homebar>
+    </div>
+
+    <div class="l-right">
+    <app-searchbar></app-searchbar>
+  <div class="body-main">
+    <p id="movies-title">Movies</p>
+    <div class="movies-body">
+
+        <div *ngFor="let movie of adminService.movies">
+            <div class="movies-data-show">
+              <img class="imagemovie" src="{{movie.movieImage}}" alt="Image Not in the Database">
+                <div class="movie-name">
+                    <p> {{movie.movieName}}</p>
+                </div>
+                <div class="movie-price">
+                    <p>{{movie.moviePrice}}</p>
+                </div>
+                <div class="movie-book-now">
+                    <button class="movie-button-book-now" [routerLink]="['/program']" routerLinkActive="router-link-active" >Book now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+

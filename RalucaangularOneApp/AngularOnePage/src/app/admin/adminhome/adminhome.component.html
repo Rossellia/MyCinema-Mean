@@ -1,0 +1,72 @@
+
+<div class="layout">
+    <div class="l-left">
+
+        <app-adminhomebar></app-adminhomebar>
+    </div>
+    <div class="l-right">
+      <app-adminsearchbar></app-adminsearchbar>
+        <div class="main">
+            <h2 class="title">Admin | Home</h2>
+            <div class="main-admin">
+                <div class="display-information">
+                    <div class="total-users">
+                        <p class="info-text">Total Users</p>
+                        <p class="info-numbers">144</p>
+                    </div>
+                    <div class="total-movies">
+                        <p class="info-text">Total Movies
+                        <p class="info-numbers">{{adminService.moviescount}}</p>
+                    </div>
+                    <div class="total-rooms">
+                        <p class="info-text">Total Rooms</p>
+                        <p class="info-numbers">22</p>
+                    </div>
+                    <div class="total-bookings">
+                        <p class="info-text">Total Bookings
+                        <p class="info-numbers">Coming soon</p>
+                    </div>
+                </div>
+                <div class="column-50">
+                    <div class="display-last-updates">
+                        <div class="last-update-information">
+                            <h2>Last five reservations</h2>
+                            <p><img class="mini-image" src="../assets/images/john-doe.png"> Numele de utilizator</p>
+                            <p><img class="mini-image" src="../assets/images/john-doe.png"> Numele de utilizator</p>
+                            <p><img class="mini-image" src="../assets/images/john-doe.png"> Numele de utilizator</p>
+                            <p><img class="mini-image" src="../assets/images/john-doe.png"> Numele de utilizator</p>
+                            <p><img class="mini-image" src="../assets/images/john-doe.png"> Numele de utilizator</p>
+                            <h2>Last updates</h2>
+                            <div class="last-registered-user">
+                                <img src="../assets/images/john-doe.png">
+                                <p>
+                                    <a href="REDIRECT SPRE ADMIN USERS cu search pe numele utilizatorului(sa apara utlimul utilizator inregistrat primu)"
+                                    >Numele de utilizator</a> is the last
+                                    <mark class="purple">registered user</mark>
+                                </p>
+                            </div>
+                            <div class="last-added">
+                                <img src="../assets/images/cinema-room-1-1.jpg">
+                                <p><a href="REDIRECT SPRE ADMIN ROOMS cu search pe camera(sa apara camera prima)"
+                                >Red-Cinema-Room</a> is the last
+                                    <mark class="purple">added room</mark>
+                                </p>
+                            </div>
+                            <div class="last-added">
+
+                                <img src="{{lastmovieimage}}">
+                                <p><a [routerLink]="['/adminmovie']" routerLinkActive="router-link-active" >{{lastmoviename}}</a> is the last
+                                    <mark class="purple">added movie</mark>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="display-right-information">
+                        <div class="right-info">
+                            <img class="right-image" src="../assets/images/back.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+

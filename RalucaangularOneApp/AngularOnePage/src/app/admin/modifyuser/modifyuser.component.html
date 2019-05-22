@@ -1,0 +1,103 @@
+<div class="layout">
+
+  <div class="l-left">
+      <app-adminhomebar></app-adminhomebar>
+  </div>
+
+  <div class="l-right">
+      <app-adminsearchbar></app-adminsearchbar>
+      <div class="row">
+          <div class="column">
+              <div class="details-part">
+                  <form #userProfileForm="ngForm" (ngSubmit)="onSubmit(userProfileForm)">
+                      <input type="hidden" name="_id" #_id="ngModel"
+                          [(ngModel)]="userProfileService.selectedUser._id">
+                      <div class="details">
+                          <h5>User Name</h5>
+                          <input type="text" name="username" #username="ngModel"
+                              [(ngModel)]="userProfileService.selectedUser.username"
+                              placeholder="Change the user name">
+                      </div>
+
+                      <div class="details">
+                          <h5>Profile picture:</h5>
+                          <input type="text" name="profilePicture" #name="ngModel"
+                              [(ngModel)]="userProfileService.selectedUser.profilePicture"
+                              placeholder="Eg : default.png">
+                      </div>
+
+                      <div class="details">
+                          <h5>First Name:</h5>
+                          <input type="text" name="firstName" #name="ngModel"
+                              [(ngModel)]="userProfileService.selectedUser.firstName"
+                              placeholder="Enter first name">
+                      </div>
+
+                      <div class="details">
+                          <h5>Last Name:</h5>
+                          <input type="text" name="lastName" #name="ngModel"
+                              [(ngModel)]="userProfileService.selectedUser.lastName"
+                              placeholder="Enter last name">
+                      </div>
+
+                      <div class="details">
+                          <h5>E-mail:</h5>
+                          <input type="text" name="email" #name="ngModel"
+                              [(ngModel)]="userProfileService.selectedUser.email" placeholder="Enter e-mail">
+                      </div>
+                      <div class="details">
+                          <h5>Phone Number:</h5>
+                          <input type="text" name="phoneNumber" #name="ngModel"
+                              [(ngModel)]="userProfileService.selectedUser.phoneNumber"
+                              placeholder="Enter phone number">
+                      </div>
+                      <div class="details">
+                          <h5>Birthday:</h5>
+                          <input type="text" name="birthday" #name="ngModel"
+                              [(ngModel)]="userProfileService.selectedUser.birthday"
+                              placeholder="Enter last name">
+                      </div>
+                      <div class="details">
+                          <button class="button" type="button" (click)="resetForm(userProfileForm)">Reset</button>
+                          <button class="button" type="submit" [disabled]="!userProfileForm.valid">Submit</button>
+                      </div>
+
+                  </form>
+              </div>
+          </div>
+          <div class="column">
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Username </th>
+                          <th>Profile Picture</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>E-mail</th>
+                          <th>Phone Number</th>
+                          <th>Birthday</th>
+                          <th></th>
+                      </tr>
+                  </thead>
+                  <tr *ngFor="let usr of userProfileService.userProfiles">
+                      <td>{{usr.username}}</td>
+                      <td>{{usr.profilePicture}}</td>
+                      <td>{{usr.firstName}}</td>
+                      <td>{{usr.lastName}}</td>
+                      <td>{{usr.email}}</td>
+                      <td>{{usr.phoneNumber}}</td>
+                      <td>{{usr.birthday}}</td>
+                      <td>
+                        <button class="action-btn" (click)="onEdit(usr)">
+                            <i class="material-icons">edit</i>
+                        </button>
+                        <button class="action-btn"  (click)="onDelete(usr._id,userProfileForm)">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </td>
+                  </tr>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
