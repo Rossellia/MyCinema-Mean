@@ -1,0 +1,55 @@
+
+<div class="layout">
+
+  <div class="l-left">
+<app-adminhomebar></app-adminhomebar>
+  </div>
+  <div class="l-right">
+  <app-adminsearchbar></app-adminsearchbar>
+<div class="main">
+  <h2 class="title">Add Movie</h2>
+
+          <div class="add-movie-div">
+              <form #addmovieForm="ngForm" (ngSubmit)="addmovieForm.valid && onSubmit(addmovieForm)" class="add-movie-form">
+                  <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="adminService.selectedAdmin._id">
+
+
+                      <p>Movie Name</p>
+                  <input type="text" name="movieName" #movieName="ngModel" [(ngModel)]="adminService.selectedAdmin.movieName"
+                  required [ngClass]="{'invalid-textbox' :addmovieForm.submitted && !movieName.valid }">
+                  <div *ngIf="addmovieForm.submitted && movieName.errors">
+                    <label *ngIf="movieName?.errors.required" class="validation-message">This field is required.</label>
+                  </div>
+
+                  <p>Movie Price</p>
+                  <input type="number" min="0" max="100" name="moviePrice" #moviePrice="ngModel" [(ngModel)]="adminService.selectedAdmin.moviePrice"
+                  required [ngClass]="{'invalid-textbox' :addmovieForm.submitted && !moviePrice.valid}">
+                  <div *ngIf="addmovieForm.submitted && moviePrice.errors">
+                    <label *ngIf="moviePrice?.errors.required" class="validation-message">This field is required.</label>
+                  </div>
+                  <p>Movie Duration</p>
+                  <input type="time" step="1"  class="timing" name="movieDuration" #movieDuration="ngModel" [(ngModel)]="adminService.selectedAdmin.movieDuration"
+                  required [ngClass]="{'invalid-textbox' :addmovieForm.submitted && !movieDuration.valid}">
+                  <div *ngIf="addmovieForm.submitted && movieDuration.errors">
+                    <label *ngIf="movieDuration?.errors.required" class="validation-message">This field is required.</label>
+                  </div>
+
+                  <p>Movie Image</p>
+                  <input type="text" name="movieImage" #movieImage="ngModel" [(ngModel)]="adminService.selectedAdmin.movieImage" required [ngClass]="{'invalid-textbox' :addmovieForm.submitted && !movieImage.valid}">
+                  <div *ngIf="addmovieForm.submitted && movieImage.errors">
+                    <label *ngIf="movieImage?.errors.required" class="validation-message">This field is required.</label>
+                  </div>
+
+                  <div class="button-container">
+                  <input class="buttons-movie" id="modal-button-add" type="submit" value="Add Movie">
+                  <input class="buttons-movie" [routerLink]="['/adminmovie']" routerLinkActive="router-link-active" value="Back to movies" type="button">
+
+                 </div>
+                </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,26 @@
+<div class="layout">
+
+  <div class="l-left">
+   <app-adminhomebar></app-adminhomebar>
+  </div>
+
+  <div class="l-right">
+  <app-adminsearchbar></app-adminsearchbar>
+<div class="body-main">
+  <h2 class="movie-title">Add Room</h2>
+  <form #roomForm = "ngform" (ngSubmit)="roomForm.valid && onSubmit(roomForm)" class="add-room-form">
+    <p>Room Name</p>
+    <input type="text" accept="image/*" required name="room-title">
+    <p>Room Image | 1</p>
+    <input type="file" accept="image/*" required name="room-image-1">
+    <p>Room Image | 2</p>
+    <input type="file" accept="image/*" required name="room-image-2">
+    <p>Room Image | 3</p>
+    <input type="file" accept="image/*" required name="room-image-3">
+    <p>Room Image | 4</p>
+    <input type="file" accept="image/*" required name="room-image-4">
+    
+</form>
+  </div>
+  </div>
+</div>
