@@ -1,0 +1,36 @@
+.movie {
+  width: 10%;
+}
+
+.screenings {
+  width: 60%;
+}
+
+.table-dimension {
+  width: 95%;
+  /*border: 1px solid blue;*/
+  margin: 60px;
+}
+
+.table-design {
+  margin-left: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.white-background {
+  width: 98%;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  background-color: white;
+}
+
+tr {
+  width: 88%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f7;
+}

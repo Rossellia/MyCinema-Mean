@@ -1,0 +1,55 @@
+<div class="layout">
+
+  <div class="l-left">
+      <app-homebar></app-homebar>
+  </div>
+
+  <div class="l-right">
+      <app-searchbar></app-searchbar>
+      <div class="main">
+          <h2 class="title">{{program.room}}</h2>
+          <div class="card">
+              <div class="card-body">
+                  <div class="room-view">
+                      <!-- 13 x 7 -->
+                      <table class="room-view-table">
+                          <tr>
+                              <td colspan="13" class="screen-row">
+                                  <div class="screen-el">Screen</div>
+                              </td>
+                          </tr>
+                          <tr *ngFor="let row of program.seats.slice(0, 91 / 13 % 1 === 0 ? 91 / 13 : 91 / 13 + 1); let idx = index">
+                              <td *ngFor="let x of program.seats.slice(idx * 13, idx * 13 + 13);let i = index">
+                                  <div *ngIf="isfree(idx,i)" class="chair free" (click)="bookseat(idx,i)"> </div>
+                                  <div id="popup1" class="overlay">
+                                      <div class="popup">
+                                          <h2>Here i am</h2>
+                                          <a class="close" click="close()" href="#">&times;</a>
+                                          <div class="content">
+                                              Thank to pop me out of that button, but now i'm done so you can close this window.
+                                          </div>
+                                          <a href="#" click="open()">OK</a>
+                                      </div>
+                                  </div>
+
+                                  <div *ngIf="!isfree(idx,i)" class="chair booked" (click)="bookseat(idx,i)"></div>
+                              </td>
+                          </tr>
+                      </table>
+
+                  </div>
+                  <div class="room-view-legend">
+                      <div class="chair free"></div> Free <br>
+                      <div class="chair booked"></div> Booked <br>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+  </div>
+</div>

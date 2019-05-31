@@ -1,0 +1,63 @@
+<div class="image-container" style="float:left"></div>
+
+<div style="float:right; width:60%">
+<div class="flex-white-container"></div>
+<div class="white-contanier" style="margin-left:30%;">
+
+
+    <div class="title-container"> My Cinema</div>
+    <div class="subtitle-container">Welcome back! Please login to your account.</div>
+    <div class="login-container">
+      <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
+        <input type="text" name="username" id="username"placeholder="Username" #username="ngModel" [(ngModel)]="model.username"
+        required  [ngClass]="{'invalid-textbox' :signInForm.submitted && !username.valid }"/>
+        <div *ngIf="signInForm.submitted && !username.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+        <input
+
+          type="password"
+          id="password"
+          name="password"
+          #password="ngModel"
+          [(ngModel)]="model.password"
+          placeholder="Password"
+          required
+          minlength="8"
+          [ngClass]="{
+            'invalid-textbox': signInForm.submitted && !password.valid
+          }"
+        />
+
+        <div *ngIf="signInForm.submitted && password?.errors.minlength">
+          <label class="validation-message">Minimum 8 characters.</label>
+        </div>
+
+        <div class="checkbox-forgpass-container">
+          <div class="checkbox-container">
+            <input type="checkbox" id="rememberMe"  name="rememberMe"#rememberMe="ngModel" [(ngModel)]="model.rememberMe"/>
+            <label for="RememberMe"> Remember Me</label>
+          </div>
+
+
+                <div class="forgot-password-container" [routerLink]="['/forgot']" routerLinkActive="router-link-active" > Forgot Password
+                </div>
+
+
+            </div>
+
+            <div class="button-container">
+
+                <input type="submit" class="button" value="Login">
+                <div class="button" [routerLink]="['/register']" routerLinkActive="router-link-active" >Sign Up</div>
+            </div>
+
+        </form>
+   <!-- Error message -->
+   <div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>
+        </div>
+      </div>
+<div class="flex-white-container"></div>
+</div>

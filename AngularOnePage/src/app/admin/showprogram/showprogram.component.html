@@ -1,0 +1,43 @@
+<div class="layout">
+
+  <div class="l-left">
+      <app-adminhomebar></app-adminhomebar>
+  </div>
+
+  <div class="l-right">
+      <app-adminsearchbar></app-adminsearchbar>
+          <div class="main">
+              <h2 class="title">Admin | Program</h2>
+
+              <div class="main-container">
+                  <form #deleteProgramForm="ngForm" (ngSubmit)="deleteProgramForm.valid">
+                      <div class="buttons-top">
+                          <button class="buttons-program" id="button-add" type="button" routerLink="/addprogram">Add Program
+              </button>
+                           <button class="buttons-program" id="button-delete" (click)="onSubmit(deleteProgramForm)" type="submit">Delete Program</button>
+                      </div>
+                      <table class="table-of-programs">
+                          <tr>
+                              <th>Number</th>
+                              <th>Title</th>
+                              <th>Room</th>
+                              <th>Date</th>
+                              <th>Time</th>
+                              <th>Delete</th>
+                          </tr>
+                          <tr *ngFor="let prog of programService.programs;let i=index">
+                              <td>{{i}}</td>
+                              <td>{{prog.movieName}}</td>
+
+                              <td>{{prog.room}}</td>
+                              <td>{{prog.date}}</td>
+                              <td>{{prog.hour}}</td>
+                              <input type="checkbox" class="check-for-delete" name="movie-ids" value="" (click)="onDelete(prog._id,deleteProgramForm)"/>
+                          </tr>
+                      </table>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+

@@ -1,0 +1,66 @@
+<div class="layout">
+    <div class="l-left">
+        <app-adminhomebar></app-adminhomebar>
+    </div>
+
+    <div class="l-right">
+        <app-adminsearchbar></app-adminsearchbar>
+
+        <div class="details-part">
+            <div class="main">
+                <h2 class="title">Admin | Edit user: {{user?.username}}</h2>
+
+                <div class="main-container">
+                    <form #userProfileForm="ngForm" (ngSubmit)="userProfileForm.valid && onSubmit(userProfileForm)" enctype="multipart/form-data">
+                        <div class="buttons-top">
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="user._id">
+                            <input class="buttons-users" type="submit" value="Save" />
+                            <input class="buttons-users" type="button" (click)="resetForm(userProfileForm)" value="Discard" />
+                        </div>
+                        <div class="row-container">
+                            <div class="main-panel">
+                                <p>Current First Name:</p>
+                                <input type="text" disabled name="old-user-first-name" value="{{user?.firstName}}">
+                                <p>Current Last Name:</p>
+                                <input type="text" disabled name="old-user-last-name" value="{{user?.lastName}}">
+                                <p>Current Email:</p>
+                                <input type="text" disabled name="old-user-email" value="{{user?.email}}">
+                                <p>Current Phone number:</p>
+                                <input type="text" disabled name="old-user-phone-number" value="{{user?.phoneNumber}}">
+                                <p>Current Profile image:</p>
+                                <input type="text" disabled id="avatar-image" value="{{user?.profilePicture}}">
+                            </div>
+                            <div class="main-panel">
+                                <p>New First Name:</p>
+                                <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="userProfileService.selectedUser.firstName" required [ngClass]="{'invalid-textbox' :userProfileForm.submitted && !firstName.valid }" />
+                                <div *ngIf="userProfileForm.submitted && firstName.errors">
+                                    <label *ngIf="firstName?.errors.required" class="validation-message">This field is required.</label>
+                                </div>
+                                <p>New Last Name:</p>
+                                <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="userProfileService.selectedUser.lastName" required [ngClass]="{'invalid-textbox' :userProfileForm.submitted && !lastName.valid }" />
+                                <div *ngIf="userProfileForm.submitted && firstName.errors">
+                                    <label *ngIf="lastName?.errors.required" class="validation-message">This field is required.</label>
+                                </div>
+                                <p>New Email:</p>
+                                <input type="text" name="email" #email="ngModel" [(ngModel)]="userProfileService.selectedUser.email" required [ngClass]="{'invalid-textbox' :userProfileForm.submitted && !email.valid }" />
+                                <div *ngIf="userProfileForm.submitted && email.errors">
+                                    <label *ngIf="email?.errors.required" class="validation-message">This field is required.</label>
+                                </div>
+                                <p>New Phone number:</p>
+                                <input type="text" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="userProfileService.selectedUser.phoneNumber" required [ngClass]="{'invalid-textbox' :userProfileForm.submitted && !phoneNumber.valid }" />
+                                <div *ngIf="userProfileForm.submitted && phoneNumber.errors">
+                                    <label *ngIf="phoneNumber?.errors.required" class="validation-message">This field is required.</label>
+                                </div>
+                                <p>New Profile image:</p>
+                                <input type="text" name="profilePicture" #profilePicture="ngModel" [(ngModel)]="userProfileService.selectedUser.profilePicture" required [ngClass]="{'invalid-textbox' :userProfileForm.submitted && !profilePicture.valid }" />
+                                <div *ngIf="userProfileForm.submitted && profilePicture.errors">
+                                    <label *ngIf="profilePicture?.errors.required" class="validation-message">This field is required.</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,201 @@
+
+input[type=text]{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: rgb(67, 66, 93, 0.5);
+}
+
+.button {
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 40%;
+  height: auto;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  border: 1px solid;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #43425D;
+  color: white;
+  text-align: center;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: white;
+  color: #43425D;
+  border-color: #43425D;
+  cursor: pointer;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  padding-top: 2vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-half {
+  float: left;
+  width: 100%;
+}
+
+.right-half {
+  float: right;
+  width: 50%;
+  margin-top: -10%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+tr {
+  padding: 3vh;
+  background-color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+td {
+  font-weight: normal;
+}
+th {
+  padding-right: 1vh;
+}
+
+.buttons-top
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.buttons-user
+{
+    color: white;
+    background-color: #3381ff;
+    border-radius: 5px;
+    padding: 10px 40px;
+    border: none;
+    font-size: 13px;
+    margin: 10px;
+}
+
+.buttons-user:disabled {
+    background-color: #5C9AFF;
+}
+
+.buttons-user:active {
+    background-color: #0062ff;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.table-of-users
+{
+    width: 100%;
+    text-align: center;
+}
+
+.table-of-users th
+{
+    font-size: 16px;
+    text-align: center;
+    background-color: #f0f0f7;
+}
+
+.table-of-users img
+{
+    width: 50px;
+    height: 50px;
+}
+
+.table-of-users tr:nth-child(2n+1)
+{
+    background-color: lavender;
+}
+
+.table-of-users td:first-child
+{
+    font-weight: bold;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 5px;
+}
+
+.buttons-movie
+{
+    color: white;
+    background-color: #3381ff;
+    border-radius: 5px;
+    padding: 10px 40px;
+    border: none;
+    font-size: 13px;
+    margin: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+      width: 100%;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .left-half {
+      float: left;
+      width: 100%;
+  }
+  .right-half {
+      float: left;
+      padding-top: 150%;
+      width: 100%;
+  }
+}
+
+@media only screen and (max-height: 900px) and (min-height:601px) {
+  .left-half {
+      float: left;
+      width: 100%;
+  }
+  .right-half {
+      float: left;
+      padding-top: 100%;
+      width: 100%;
+  }
+}
+
+@media only screen and (height: 1440px) and (width:900px) {
+  .right-half {
+      float: right;
+      width: 50%;
+      margin-top: -10%;
+      margin-right: 0;
+      margin-left: 0;
+  }
+}
+
+@media only screen and (max-height: 1400px) and (max-width:1200px) and (min-height:901px) and (min-width: 910px) {
+  .left-half {
+      float: left;
+      width: 100%;
+  }
+  .right-half {
+      float: left;
+      padding-top: 50%;
+      width: 100%;
+  }
+}

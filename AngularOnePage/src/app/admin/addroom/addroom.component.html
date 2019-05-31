@@ -1,0 +1,59 @@
+<div class="layout">
+
+  <div class="l-left">
+    <app-adminhomebar></app-adminhomebar>
+  </div>
+
+  <div class="l-right">
+    <app-adminsearchbar></app-adminsearchbar>
+    <div class="body-main">
+      <h2 class="title">Add Room</h2>
+      <!--<div class="alert alert-danger">Mesaj cand ceva nu este ok. Campuri necompletate, poze lipsa</div>-->
+      <div class="add-room-div">
+        <form #addroomForm="ngForm" (ngSubmit)="addroomForm.valid && onSubmit(addroomForm)" class="add-room-form">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="roomService.selectedRoom._id">
+          <p>Room Name</p>
+          <input type="text" name="roomName" #roomName="ngModel" [(ngModel)]="roomService.selectedRoom.rooomName"
+            required [ngClass]="{'invalid-textbox' :addroomForm.submitted && !roomName.valid }">
+          <div *ngIf="addroomForm.submitted && roomName.errors">
+            <label *ngIf="roomName?.errors.required" class="alert alert-danger">This field is required.</label>
+          </div>
+
+          <p>Room Image #1</p>
+          <input type="text" name="roomImage1" #roomImage1="ngModel" [(ngModel)]="roomService.selectedRoom.roomImage1"
+            required [ngClass]="{'invalid-textbox' :addroomForm.submitted && !roomImage1.valid }">
+          <div *ngIf="addroomForm.submitted && roomImage1.errors">
+            <label *ngIf="roomImage1?.errors.required" class="alert alert-danger">This field is required.</label>
+          </div>
+
+          <p>Room Image #2</p>
+          <input type="text" name="roomImage2" #roomImage2="ngModel" [(ngModel)]="roomService.selectedRoom.roomImage2"
+            required [ngClass]="{'invalid-textbox' :addroomForm.submitted && !roomImage2.valid }">
+          <div *ngIf="addroomForm.submitted && roomImage2.errors">
+            <label *ngIf="roomImage2?.errors.required" class="alert alert-danger">This field is required.</label>
+          </div>
+
+          <p>Room Image #3</p>
+          <input type="text" name="roomImage3" #roomImage3="ngModel" [(ngModel)]="roomService.selectedRoom.roomImage3"
+            required [ngClass]="{'invalid-textbox' :addroomForm.submitted && !roomImage3.valid }">
+          <div *ngIf="addroomForm.submitted && roomImage3.errors">
+            <label *ngIf="roomImage3?.errors.required" class="alert alert-danger">This field is required.</label>
+          </div>
+
+          <p>Room Image #4</p>
+          <input type="text" name="roomImage4" #roomImage4="ngModel" [(ngModel)]="roomService.selectedRoom.roomImage4"
+            required [ngClass]="{'invalid-textbox' :addroomForm.submitted && !roomImage4.valid }">
+          <div *ngIf="addroomForm.submitted && roomImage4.errors">
+            <label *ngIf="roomImage4?.errors.required" class="alert alert-danger">This field is required.</label>
+          </div>
+
+          <div class="button-container">
+            <button class="buttons-rooms" id="modal-button-add" type="submit" value="Add Room">Add Room</button>
+            <button class="buttons-rooms" [routerLink]="['/adminroom']" routerLinkActive="router-link-active"
+            value="Back to rooms" type="button">Back to Rooms</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

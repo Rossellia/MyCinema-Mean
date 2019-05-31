@@ -1,0 +1,129 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .close:hover {
+  color: #06D85F;
+}
+
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .box {
+      width: 70%;
+  }
+  .popup {
+      width: 70%;
+  }
+}
+
+.room-view {
+  text-align: left;
+}
+
+.room-view .room-view-table {
+  margin: auto;
+}
+
+.room-view-table .chair {
+  width: 33px;
+  height: 33px;
+  margin: 4px;
+  background: rgb(137, 113, 153);
+  ;
+  border-radius: 5px;
+}
+
+.room-view-table .chair.free {
+  background: rgb(137, 113, 153);
+  ;
+  cursor: pointer;
+}
+
+.room-view-table .chair.booked {
+  background: #cac8c8;
+  ;
+}
+
+.room-view-table .chair.sold {
+  background: #ff6567;
+}
+
+.room-view-table .screen-row {
+  /* padding-top: 10px; */
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.room-view-table .screen-row .screen-el {
+  background: #e2e2e2;
+  color: #333;
+  font-weight: bold;
+  padding: 3px;
+}
+
+.room-view-legend .chair {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin: 3px;
+  border-radius: 5px;
+  margin-top: 1px;
+}
+
+.room-view-legend .chair.free {
+  background: rgb(137, 113, 153);
+  ;
+}
+
+.room-view-legend .chair.booked {
+  background: #cac8c8;
+}
+
+.room-view-legend .chair.sold {
+  background: #ff6567;
+}

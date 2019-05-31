@@ -1,0 +1,58 @@
+
+<div class="layout">
+    <div class="l-left">
+
+        <app-adminhomebar></app-adminhomebar>
+    </div>
+    <div class="l-right">
+      <app-adminsearchbar></app-adminsearchbar>
+        <div class="main">
+            <h2 class="title">Admin | Home</h2>
+            <div class="main-admin">
+                <div class="display-information">
+                    <div class="total-users">
+                        <p class="info-text">Total Users</p>
+                        <p class="info-numbers">144</p>
+                    </div>
+                    <div class="total-movies">
+                        <p class="info-text">Total Movies
+                        <p class="info-numbers">{{adminService.moviescount}}</p>
+                    </div>
+                    <div class="total-rooms">
+                        <p class="info-text">Total Rooms</p>
+                        <p class="info-numbers">2</p>
+                    </div>
+                    <div class="total-bookings">
+                        <p class="info-text">Total Bookings
+                        <p class="info-numbers">{{nrtickets}}</p>
+                    </div>
+                </div>
+                <div class="column-50">
+                    <div class="display-last-updates">
+                        <div class="last-update-information">
+                           
+                            <h2>Last updates</h2>
+                            <div class="last-registered-user">
+                               
+                            </div>
+                            <div class="last-added">
+                        
+                            </div>
+                            <div class="last-added">
+
+                                <img src="{{lastmovieimage}}" alt="imagine">
+                                <p><a [routerLink]="['/adminmovie']" routerLinkActive="router-link-active" >{{lastmoviename}}</a> is the last
+                                    <mark class="purple">added movie</mark>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="display-right-information">
+                        <div class="right-info">
+                            <img class="right-image" src="../assets/images/back.png" alt="imagine">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+

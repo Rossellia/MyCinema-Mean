@@ -1,0 +1,50 @@
+<div class="layout">
+
+  <div class="l-left">
+      <app-adminhomebar></app-adminhomebar>
+  </div>
+
+  <div class="l-right">
+      <app-adminsearchbar></app-adminsearchbar>
+      <div class="main">
+          <h2 class="title">Admin | Users</h2>
+
+          <div class="main-container">
+              <form #profileForm="ngForm" (ngSubmit)="profileForm.valid && onSubmit(profileForm)" class="add-movie-form">
+                  <div class="buttons-top">
+                      <button class="buttons-movie" id="button-delete" (click)="onDelete(profileForm)" type="submit">Delete user</button>
+                  </div>
+                  <table class="table-of-users">
+
+                      <tr>
+                          <th>Number</th>
+                          <th>Username </th>
+                          <th>Profile Image</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>E-mail</th>
+                          <th>Phone Number</th>
+                          <th>Delete</th>
+                          <th>Modify</th>
+                          <th></th>
+                      </tr>
+
+                      <tr *ngFor="let usr of userProfileService.userProfiles; index as i">
+                          <td>{{i+1}}</td>
+                          <td>{{usr.username}}</td>
+                          <td>{{usr.profilePicture}}</td>
+                          <td>{{usr.firstName}}</td>
+                          <td>{{usr.lastName}}</td>
+                          <td>{{usr.email}}</td>
+                          <td>{{usr.phoneNumber}}</td>
+                          <td>
+                              <input type="checkbox" class="check-for-delete" name="usersForDelete" value="" (click)="onDelete(usr._id,profileForm)">
+                          </td>
+                          <td><a class="button-edit" [routerLink]="[ '/editprofile', usr._id]" routerLinkActive="router-link-active">Edit</a></td>
+                      </tr>
+                  </table>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

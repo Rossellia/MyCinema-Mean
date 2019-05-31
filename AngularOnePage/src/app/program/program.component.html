@@ -1,0 +1,64 @@
+<div class="layout">
+
+  <div class="l-left">
+      <app-homebar></app-homebar>
+  </div>
+
+  <div class="l-right">
+      <app-searchbar></app-searchbar>
+      <h1 id="program-title">Program</h1>
+
+
+      <div class="white-background">
+          <span class="buttons-top" style="float: left;" *ngFor="let x of programService.programs; let i=index">
+             <div *ngIf="lower(i)">
+              <div class="buttons-top" style="float: left;" *ngFor="let y of x.buttons; let idx=index">
+          <button  class="button-day" (click)="open(y.split(' ')[2])">{{y.split(' ')[2]}}, {{y.split(' ')[0]}} {{ y.split(' ')[1]}}</button></div></div>
+          </span>
+          <!--
+          <div class="buttons-top">
+              <button class="button-day" (click)="open('Monday')">Monday</button>
+              <button class="button-day" (click)="open('Tuesday')">Tuesday</button>
+              <button class="button-day" (click)="open('Wednesday')">Wednesday</button>
+              <button class="button-day" (click)="open('Thursday')">Thursday</button>
+              <button class="button-day" (click)="open('Friday')">Friday</button>
+              <button class="button-day" (click)="open('Saturday')">Saturday</button>
+              <button class="button-day" (click)="open('Sunday')">Sunday</button>
+          </div>-->
+          <div *ngIf="existt()" class="table-dimension">
+              <table class="table-design">
+                  <div>
+                      <tr class="headers-table" style="width:1000px;border-top:1px solid rgb(151, 72, 204);">
+                          <th id="header-movie" style="width:152px;border-right:1px solid rgb(151, 72, 204);height:50px;">Movie</th>
+                          <th id="header-hours">Screening Hours</th>
+                      </tr>
+
+                  </div>
+                  <div style=" width:100%;">
+                      <tr *ngFor="let prog of programService.programs" style=" width:80% ;border-top:1px solid rgb(151, 72, 204);">
+                          <div *ngIf=" hasbeenprinted(prog.isDuplicate)" style="width:1000px;">
+
+                              <td class="moviee" style="border-right:1px solid rgb(151, 72, 204); width:200px;">
+                                  <span style="display:inline-block"><div class="information-play"></div>{{prog.movieName}}</span></td>
+
+
+                              <td class="screeningg" *ngFor="let programm of programService.programs;">
+                                  <ul *ngIf="programm.movieName==prog.movieName ">
+                                      <li style="list-style-type:none;"><button class="button-hour" [routerLink]="['/booking',programm._id]" routerLinkActive="router-link-active">{{programm.hour}}</button></li>
+
+                                  </ul>
+
+                              </td>
+
+
+                          </div>
+                      </tr>
+                  </div>
+
+              </table>
+
+          </div>
+          <div *ngIf="!existt()">
+              <p style="text-align: center; padding:100px;">No movies found</p>
+          </div>
+      </div>

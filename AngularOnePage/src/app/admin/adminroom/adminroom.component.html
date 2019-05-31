@@ -1,0 +1,41 @@
+<div class="layout">
+    <div class="l-left">
+       <app-adminhomebar></app-adminhomebar>
+    </div>
+    <div class="l-right">
+        <app-adminsearchbar></app-adminsearchbar>
+<div class="main">
+    <h2 class="title">Admin | Cinema-rooms</h2>
+ 
+    </div>
+    <div class="main-container">
+            <div class="buttons-top">
+                <form #deleteRoomForm="ngForm" (ngSubmit)="deleteRoomForm.valid">
+                    <div class="buttons-top">
+                <button class="buttons-room" id="button-add" type="button"
+                [routerLink]="['/addroom']" routerLinkActive="router-link-active"
+                value="Add Room">Add Room
+                </button>
+                <button class="buttons-room" id="button-delete" (click)="onSubmit(deleteRoomForm)" type="submit">Delete Room</button>
+            </div>
+            <table class="table-of-rooms">
+                <tr>
+                    <th>Number</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Delete</th>
+                </tr>
+                <tr *ngFor="let roo of rooms"></tr>
+                <td>{{i+1}}</td>
+                <td>{{roo.roomName}}</td>
+                <td><img src="{{roo.roomImage1}}" alt=""/></td>
+                <input type="checkbox" class="check-for-delete" name="movie-ids" value="" (click)="onDelete(room._id,deleteRoomForm)"/>
+
+            
+              </table>
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    
